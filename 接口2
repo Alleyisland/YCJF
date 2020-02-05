@@ -1,0 +1,66 @@
+———————————————————————————————————————————————————————
+接口名称
+	医院搜索（地区）
+简要描述：
+	实现按照地区关键字推荐医院
+请求URL：
+	http://localhost:8080/servlet/SearchByDistrictServlet（localhost为暂时IP）
+请求方式：
+	POST
+输入参数：
+	district/String/必填/地区名
+输出参数：
+	result/String/指定地区内的搜索结果，按照医院等级降序列出（json字符串/"none"）
+输入示例1（有符合的医院）
+{
+"district": "普陀区"
+}
+返回示例1
+{
+"result":[{"id":46,"distance":0,"name":"上海市同济医院","level":"三级甲等","province":"上海","city":"上海","district":"普陀区","address":"上海市普陀区新村路389号","location":"121.437617,31.272272"},
+          {"id":54,"distance":0,"name":"上海市儿童医院泸定路院","level":"三级甲等","province":"上海","city":"上海","district":"普陀区","address":"上海市普陀区泸定路355号","location":"121.394042,31.232215"},
+          {"id":65,"distance":0,"name":"上海市普陀区中心医院","level":"三级乙等","province":"上海","city":"上海","district":"普陀区","address":"上海市普陀区兰溪路164号","location":"121.409681,31.247181"}
+          ]
+}
+输入示例2（无符合的医院）
+{
+"district": "徐汇区"
+}
+返回示例2
+{
+"result":"none"
+}
+
+———————————————————————————————————————————————————————
+接口名称
+	医院搜索（距离）
+简要描述：
+	实现按照距离远近推荐医院
+请求URL：
+	http://localhost:8080/servlet/SearchByDistanceServlet（localhost为暂时IP）
+请求方式：
+	POST
+输入参数：
+	currentpos/String/必填/用户当前位置对应的百度坐标，形如"经度,纬度"
+输出参数：
+	result/String/搜索结果，按照距离升序列出（json字符串/"none"）
+输入示例1（有符合的医院）
+{
+"currentpos": "普陀区"
+}
+返回示例1
+{
+"result":[{"id":46,"distance":1.1,"name":"上海市同济医院","level":"三级甲等","province":"上海","city":"上海","district":"普陀区","address":"上海市普陀区新村路389号","location":"121.437617,31.272272"},
+          {"id":54,"distance":2.2,"name":"上海市儿童医院泸定路院","level":"三级甲等","province":"上海","city":"上海","district":"普陀区","address":"上海市普陀区泸定路355号","location":"121.394042,31.232215"},
+          {"id":65,"distance":3.3,"name":"上海市普陀区中心医院","level":"三级乙等","province":"上海","city":"上海","district":"普陀区","address":"上海市普陀区兰溪路164号","location":"121.409681,31.247181"}
+          ]
+}
+输入示例2（无符合的医院）
+{
+"district": "徐汇区"
+}
+返回示例2
+{
+"result":"none"
+}
+
