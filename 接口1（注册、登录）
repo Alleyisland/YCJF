@@ -9,19 +9,22 @@
 	POST
 输入参数：
 	phone/String/必填/手机号
+	verifycode/String/必填/验证码
 输出参数：
 	result/boolean/注册结果（true/false）
-输入示例1（未注册）
+输入示例1（未注册且验证码通过）
 {
 "phone": "17321050252"
+"verifycode":"1234"
 }
 返回示例1
 {
 "result":true
 }
-输入示例2（已注册）
+输入示例2（已注册或验证码不通过）
 {
 "phone": "17368160219"
+"verifycode":"1234"
 }
 返回示例2
 {
@@ -39,19 +42,22 @@
 	POST
 输入参数：
 	phone/String/必填/手机号
+	verifycode/String/必填/验证码
 输出参数：
 	result/String/注册结果（true/false）
-输入示例1（账户存在）
+输入示例1（账户存在且验证通过）
 {
 "phone": "17321050252"
+"verifycode": "1234"
 }
 返回示例1
 {
 "result":true
 }
-输入示例2（账户不存在）
+输入示例2（账户不存在或者验证不通过）
 {
 "phone": "17368160219"
+"verifycode": "1234"
 }
 返回示例2
 {
