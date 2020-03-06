@@ -4,7 +4,7 @@
 简要描述：
 	实现按照地区关键字推荐医院
 请求URL：
-	http://localhost:8080/servlet/SearchByDistrictServlet（localhost为暂时IP）
+	http://139.196.78.36:8080/servlet/SearchByDistrictServlet
 请求方式：
 	POST
 输入参数：
@@ -37,11 +37,11 @@
 简要描述：
 	实现按照距离远近推荐医院
 请求URL：
-	http://localhost:8080/servlet/SearchByDistanceServlet（localhost为暂时IP）
+	http://139.196.78.36:8080/servlet/SearchByDistanceServlet
 请求方式：
 	POST
 输入参数：
-	currentpos/String/必填/用户当前位置对应的百度坐标，形如"经度,纬度"
+	currentpos/String/必填/用户当前位置对应的百度坐标，形如"(经度,纬度)"
 输出参数：
 	result/String/搜索100km内的结果，按照距离升序列出（json字符串/"none"）
 输入示例1（有符合的医院）
