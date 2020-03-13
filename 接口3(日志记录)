@@ -1,0 +1,32 @@
+———————————————————————————————————————————————————————
+接口名称
+	注册
+简要描述：
+	实现用户就诊信息的记录
+请求URL：
+	http://139.196.78.36:8080/servlet/AddLogServlet
+请求方式：
+	POST
+输入参数：
+	phone/String/必填/手机号
+	hospitalId/int/必填/医院id
+输出参数：
+	result/boolean/记录的结果（true/false）
+输入示例1（记录成功）
+{
+"phone": "17321050252"
+"hospitalId": "1"
+}
+返回示例1
+{
+"result":true
+}
+输入示例2（记录失败(绝大多数情况下记录不会失败)）
+{
+"phone": "17368160219"
+"hospitalId": "1"
+}
+返回示例2
+{
+"result":false
+}
